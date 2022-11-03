@@ -1,0 +1,34 @@
+Programa para mostrar Horas, minutos y segundos
+
+package com.mycompany.prueba;
+import java.util.Scanner;
+
+public class Prueba {
+
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        double seg;
+        double hora;
+        double min;
+        System.out.println("Ingrese la cantidad de segundos");
+        seg = leer.nextInt();
+        hora = seg/3600;
+        //Se divide la cantidad de segundos por 3600 para saber cuántas horas son
+        int horaEntero = (int)hora;
+        //Se toma la parte entera de hora en una nueva variable tipo int
+        min = (((seg/3600)-horaEntero)*3600)/60;
+        //El mismo proceso que hora, para luego restarle las horas, multiplicarlo por 3600 y dividirlo por 60 para obtener los minutos
+        int minEntero = (int)min;
+        //Se toma la parte entera de min en una nueva variable tipo int
+        seg = (((((seg/3600)-horaEntero)*3600)/60)-minEntero)*60;
+        //El mismo proceso que min, pero al final se le restan los minutos y se lo multiplica por 60 para obtener los segundos
+        int segEntero = (int)seg;
+        //Se toma la parte entera de seg en una nueva variable tipo int
+        System.out.println(horaEntero+" horas, "+minEntero+" minutos y "+segEntero+" segundos");
+    }
+}
+
+
+
+
+
